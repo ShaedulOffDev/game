@@ -42,6 +42,77 @@ a{
 ::-webkit-scrollbar-thumb:hover {
     background: #222; 
 }
+/* ! LOADER */
+#loader{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to right,#000 33.33%, #0068b3 33.33%,  #0068b3 66.66% ,#57B8FF 66.66%);
+}
+.loaderWrap{
+    display: flex;
+    width: 200px;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+}
+.loaderBox{
+    width: 50%;
+    height: 50%;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    position: relative;
+    background: rgba(255,255,255,0.5);
+}
+.loaderWrap img{
+    max-width: 60px;
+    z-index: 1;
+    animation: loaderImg 10s linear infinite;
+}
+@keyframes loaderImg {
+    100%{
+        transform:rotateY(360deg) rotateX(360deg) rotate(360deg);
+        perspective: 500px;
+    }
+}
+.loaderBox::after{
+    animation: box 1.05s linear infinite alternate;
+    position: absolute;
+    background: #ffffff22;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    border-radius: 50%;
+    content: '';
+}
+.loaderBox::before{
+    animation: box 1s linear infinite alternate;
+    position: absolute;
+    background: #ffffff50;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    border-radius: 50%;
+    content: '';
+}
+@keyframes box {
+    100%{
+        transform: scale(1.5);
+    }
+}
 /* ! Header */
 header{
     width: 100%;
