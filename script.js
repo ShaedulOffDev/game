@@ -24,3 +24,8 @@ down.addEventListener('click', (e) => {
         ul.style.transform = 'translateY(-105%)';
     }
 })
+var loader = $('#loader');
+window.addEventListener('load', e => {
+    loader.style.display = 'none';
+    document.body.style.overflow = 'auto'
+})
